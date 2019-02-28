@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <record id="puesto1" model="discoteca.puesto">
+      <field name="name">Jefe</field>
+      <field name="sueldo_hora">20</field>
+      <field name="num_horas_mensuales">20</field>
+    </record>
+
+    <record id="empleado1" model="discoteca.empleado">
+      <field name="name">Roberto</field>
+      <field name="apellidos">Ruiz</field>
+      <field name="DNI">12345678F</field>
+      <field name="puesto" ref ="puesto1"></field>
+    </record>
+
+    <record id="puesto2" model="discoteca.puesto">
+      <field name="name">Camarero</field>
+      <field name="sueldo_hora">10</field>
+      <field name="num_horas_mensuales">20</field>
+    </record>
+
+    <record id="empleado2" model="discoteca.empleado">
+      <field name="name">Iñigo</field>
+      <field name="apellidos">Madrigal</field>
+      <field name="DNI">23456789F</field>
+      <field name="puesto" ref ="puesto2"></field>
+    </record>
+
+    <record id="puesto3" model="discoteca.puesto">
+      <field name="name">Segurata</field>
+      <field name="sueldo_hora">12</field>
+      <field name="num_horas_mensuales">20</field>
+    </record>
+
+    <record id="empleado3" model="discoteca.empleado">
+      <field name="name">Nacho</field>
+      <field name="apellidos">Torres</field>
+      <field name="DNI">12345679F</field>
+      <field name="puesto" ref ="puesto3"></field>
+    </record>
+
+    <record id="entrada1" model="discoteca.entrada">
+      <field name="name">1</field>
+      <field name="tipo_entrada">0</field>
+      <field name="precio_entrada">10</field>
+    </record>
+
+    <record id="cliente_vip1" model="discoteca.cliente_vip">
+      <field name="name">Jiann</field>
+      <field name="apellidos">Pablo</field>
+      <field name="DNI">23456721E</field>
+      <field name="entrada" ref ="entrada1"></field>
+    </record>
+
+    <record id="bebida1" model="discoteca.bebida">
+      <field name="name">Larios</field>
+      <field name="precio_bebida">16</field>
+      <field name="tipo_bebida">Alcohol destilado</field>
+      <field name="graduacion">37</field>
+      <field name="tamaño_botella">1L</field>
+    </record>
+
+    <record id="bono_premium1" model="discoteca.bono_premium">
+      <field name="name">1</field>
+      <field name="zona_reservada">ZonaVip1</field>
+      <field name="bebida" ref="bebida1"></field>
+      <field name="cliente_vip" ref ="cliente_vip1"></field>
+    </record>
+
+    <record id="musica1" model="discoteca.musica">
+      <field name="name">0</field>
+    </record>
+
+    <record id="dj1" model="discoteca.dj">
+      <field name="name">Dj Paquito</field>
+      <field name="apellidos">Gutierrez</field>
+      <field name="DNI">98765432G</field>
+      <field name="sueldo">30</field>
+      <field name="musica" ref="musica1"></field>
+    </record>
+
+    <record id="evento1" model="discoteca.evento">
+      <field name="name">1</field>
+      <field name="nombre">Evento Primavera</field>
+      <field name="DJ" ref ="dj1"></field>
+      <field name="fecha">02-04-2019</field>
+      <field name="musica" ref="musica1"></field>
+    </record>
+
+  </data>
+</odoo>

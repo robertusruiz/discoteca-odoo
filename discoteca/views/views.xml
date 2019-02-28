@@ -1,0 +1,235 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="discoteca.empleado">
+      <field name="name">listado empleados</field>
+      <field name="model">discoteca.empleado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="DNI"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.puesto">
+      <field name="name">listado puestos</field>
+      <field name="model">discoteca.puesto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="sueldo_hora"/>
+          <field name="num_horas_mensuales"/>
+          <field name="sueldo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.cliente_vip">
+      <field name="name">listado clientes_vip</field>
+      <field name="model">discoteca.cliente_vip</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="DNI"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.entrada">
+      <field name="name">listado entradas</field>
+      <field name="model">discoteca.entrada</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo_entrada"/>
+          <field name="precio_entrada"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.bono_premium">
+      <field name="name">listado bonos_premium</field>
+      <field name="model">discoteca.bono_premium</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="zona_reservada"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.bebida">
+      <field name="name">listado bebidas</field>
+      <field name="model">discoteca.bebida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio_bebida"/>
+          <field name="tipo_bebida"/>
+          <field name="graduacion"/>
+          <field name="tamaño_botella"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="discoteca.evento">
+      <field name="name">listado eventos</field>
+      <field name="model">discoteca.evento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="fecha"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.dj">
+      <field name="name">listado DJ</field>
+      <field name="model">discoteca.dj</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellidos"/>
+          <field name="DNI"/>
+          <field name="sueldo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="discoteca.musica">
+      <field name="name">listado musica</field>
+      <field name="model">discoteca.musica</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="discoteca.empleado_action_window">
+      <field name="name">EMPLEADOS</field>
+      <field name="res_model">discoteca.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.puesto_action_window">
+      <field name="name">PUESTOS</field>
+      <field name="res_model">discoteca.puesto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.cliente_vip_action_window">
+      <field name="name">CLIENTES VIP</field>
+      <field name="res_model">discoteca.cliente_vip</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.entrada_action_window">
+      <field name="name">ENTRADAS</field>
+      <field name="res_model">discoteca.entrada</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.bono_premium_action_window">
+      <field name="name">BONOS PREMIUM</field>
+      <field name="res_model">discoteca.bono_premium</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.bebida_action_window">
+      <field name="name">BEBIDAS</field>
+      <field name="res_model">discoteca.bebida</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.evento_action_window">
+      <field name="name">EVENTOS</field>
+      <field name="res_model">discoteca.evento</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.dj_action_window">
+      <field name="name">DJs</field>
+      <field name="res_model">discoteca.dj</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="discoteca.musica_action_window">
+      <field name="name">MUSICA</field>
+      <field name="res_model">discoteca.musica</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="discoteca.action_server">
+      <field name="name">discoteca server</field>
+      <field name="model_id" ref="model_discoteca_discoteca"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="discoteca" id="discoteca.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Empleados" id="discoteca.menu_1" parent="discoteca.menu_root"/>
+    <menuitem name="Puestos" id="discoteca.menu_2" parent="discoteca.menu_root"/>
+    <menuitem name="Clientes_vip" id="discoteca.menu_3" parent="discoteca.menu_root"/>
+    <menuitem name="Entradas" id="discoteca.menu_4" parent="discoteca.menu_root"/>
+    <menuitem name="Bonos_premium" id="discoteca.menu_5" parent="discoteca.menu_root"/>
+    <menuitem name="Bebidas" id="discoteca.menu_6" parent="discoteca.menu_root"/>
+    <menuitem name="Eventos" id="discoteca.menu_7" parent="discoteca.menu_root"/>
+    <menuitem name="Elegir DJ" id="discoteca.menu_8" parent="discoteca.menu_root"/>
+    <menuitem name="Tipos de musica" id="discoteca.menu_9" parent="discoteca.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Gestion de empleados" id="discoteca.menu_1_list" parent="discoteca.menu_1"
+              action="discoteca.empleado_action_window"/>
+
+    <menuitem name="Gestion de puestos" id="discoteca.menu_2_list" parent="discoteca.menu_2"
+              action="discoteca.puesto_action_window"/>
+
+    <menuitem name="Gestion de clientes vip" id="discoteca.menu_3_list" parent="discoteca.menu_3"
+              action="discoteca.cliente_vip_action_window"/>
+
+    <menuitem name="Gestion de entradas" id="discoteca.menu_4_list" parent="discoteca.menu_4"
+              action="discoteca.entrada_action_window"/>
+
+    <menuitem name="Gestion de bonus premium" id="discoteca.menu_5_list" parent="discoteca.menu_5"
+              action="discoteca.bono_premium_action_window"/>
+
+    <menuitem name="Gestion de bebidas" id="discoteca.menu_6_list" parent="discoteca.menu_6"
+              action="discoteca.bebida_action_window"/>
+
+    <menuitem name="Gestion de eventos" id="discoteca.menu_7_list" parent="discoteca.menu_7"
+              action="discoteca.evento_action_window"/>
+
+    <menuitem name="Los DJ" id="discoteca.menu_8_list" parent="discoteca.menu_8"
+              action="discoteca.dj_action_window"/>
+
+    <menuitem name="Tipos de musica" id="discoteca.menu_9_list" parent="discoteca.menu_9"
+              action="discoteca.musica_action_window"/>
+
+  </data>
+</odoo>
